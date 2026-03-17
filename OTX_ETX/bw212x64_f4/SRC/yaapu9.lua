@@ -1250,7 +1250,7 @@ end
 
 local function getFlightMode()
   if frame.flightModes then
-    return frame.flightModes[telemetry.flightMode]
+    return frame.flightModes[telemetry.flightMode] or ("Mode"..telemetry.flightMode)
   else
     return nil
   end
