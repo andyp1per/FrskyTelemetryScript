@@ -47,11 +47,7 @@ local function drawPane(x,drawLib,conf,telemetry,status,battery,battId,getMaxVal
       mult=0.1
     end
     lcd.drawText(0,6 + 2, strStatus, SMLSIZE)
-    if telemetry.numSats >= 15 then
-      strNumSats = string.format("%d+",15)
-    else
-      strNumSats = string.format("%d",telemetry.numSats)
-    end
+    strNumSats = string.format("%d",telemetry.numSats)
     lcd.drawText(0 + 35, 6+1, strNumSats, MIDSIZE+RIGHT)
     lcd.drawText(0 + 37, 6 + 2 , "H", SMLSIZE)
     lcd.drawNumber(0 + 60, 6+1, telemetry.gpsHdopC*mult , MIDSIZE+flags+RIGHT)

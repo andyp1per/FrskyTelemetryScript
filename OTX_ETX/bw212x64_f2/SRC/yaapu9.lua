@@ -676,7 +676,11 @@ local function processTelemetry(appId, value, now)
     -- IMU temperature: 0 means temp =< 19°, 63 means temp => 82°
     telemetry.imuTemp = bit32.extract(value,26,6) + 19 -- C°
   elseif appId == 0x5002 then -- GPS STATUS
-    telemetry.numSats = bit32.extract(value,0,4)
+    local sats = bit32.extract(value,0,4)
+    -- passthrough only has 4 bits (max 15), preserve higher value from CRSF native sensors
+    if sats < 15 or sats > telemetry.numSats then
+      telemetry.numSats = sats
+    end
     -- offset  4: NO_GPS = 0, NO_FIX = 1, GPS_OK_FIX_2D = 2, GPS_OK_FIX_3D or GPS_OK_FIX_3D_DGPS or GPS_OK_FIX_3D_RTK_FLOAT or GPS_OK_FIX_3D_RTK_FIXED = 3
     -- offset 14: 0: no advanced fix, 1: GPS_OK_FIX_3D_DGPS, 2: GPS_OK_FIX_3D_RTK_FLOAT, 3: GPS_OK_FIX_3D_RTK_FIXED
     telemetry.gpsStatus = bit32.extract(value,4,2) + bit32.extract(value,14,2)
