@@ -61,6 +61,7 @@ prefixHashes[3843641] = { false } -- prefix size=16, Takeoff complete
 prefixHashes[1865209] = { false } -- prefix size=16, Smart RTL deactivated
 prefixHashes[4170928] = { false } -- prefix size=16, GPS home acquired
 prefixHashes[4224177] = { false } -- prefix size=16, GPS home acquired
+prefixHashes[12645590] = { false } -- prefix size=16, Cruise: -> CRUIS(ING)
 
 prefixHashes.extraMap = {
   -- plane aerobatics

@@ -376,6 +376,7 @@ local status = {
     [1865209] = false,  -- Smart RTL deactivated
     [4170928] = false,  -- GPS home acquired
     [4224177] = false,  -- GPS home acquired
+    [12645590] = false, -- Cruise: -> CRUISING
   },
 
   ---------------------------------

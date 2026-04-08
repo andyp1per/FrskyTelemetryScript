@@ -323,6 +323,7 @@ shortHashes[3843641] = false -- "3843641.wav" "Takeoff complete"
 shortHashes[1865209] = false -- "1865209.wav" "SmartRTL deactivated"
 shortHashes[4170928] = false -- "4170928.wav" "GPS home acquired"
 shortHashes[4224177] = false -- "4224177.wav" "GPS home acquired"
+shortHashes[12645590] = false -- "12645590.wav" "Cruise: -> CRUISING"
 
 local shortHash = nil
 local parseShortHash = false
